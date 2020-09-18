@@ -23,7 +23,7 @@ jobs:
   test:
    # runs-on: self-hosted cannot run docker in docker... need github-runner on linux  
     #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: [self-hosted, enterprise]
 
     steps:
       - uses: actions/checkout@v2
@@ -44,7 +44,7 @@ jobs:
     needs: test
 
     #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: [self-hosted, enterprise]
     if: github.event_name == 'push'
 
     steps:
